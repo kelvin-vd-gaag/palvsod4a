@@ -1,5 +1,4 @@
-<?php $username = "John"; ?>
-<?php $games = ["Counterstrike","Call of Duty","Battlefield"] ?>
+<?php $username = "John" ?>
     <!doctype html>
 <html lang="en">
 <head>
@@ -10,12 +9,16 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Goedemorgen, <?php echo $username ?></h1>
-<h2>Games</h2>
-<?php foreach ($games as $game): ?>
-<li><?php echo $game ?></li>
-<?php endforeach; ?>
-
+<nav>
+    <ul>
+        <li><a href="{{ url('/') }}">Home</a></li>
+        <li><a href="{{ url('/contact') }}">Contact</a></li>
+    </ul>
+</nav>
+<h1>Alle studenten</h1>
+@foreach ($students as $student)
+   <li> {{ $student['name'] }} </li>
+@endforeach
 
 </body>
-</html>%
+</html>
